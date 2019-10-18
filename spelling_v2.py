@@ -219,7 +219,6 @@ def play_game():
 	except Exception as e:
 		print(f"Your results didn't sent for some reason.\n\n{e}\n\n\tYou can go to the folder: {os.getcwd()} and find your results file named {filename} if you want to.")
 
-'''
 keep_playing = 'y'
 while str.lower(keep_playing) == 'y':
 	play_game()
@@ -230,6 +229,3 @@ speak_fast("Nice work stinky butt!  Thanks for playing!")
 closing = ['Goodbye', 'Later Gator', 'Peace Out Trout!', 'Catch you lata home skillet!']
 final = random.choice(closing)
 speak_fast(final)
-
-'''
-send_email(msg='hello')
