@@ -3,7 +3,6 @@ import win32com.client as wincl
 
 def speak_fast(message):
     engine = pyttsx3.init()
-    # rate = engine.getProperty('rate')
     voices = engine.getProperty('voices')
     engine.setProperty('rate', 215)
     engine.setProperty('voice', voices[1].id)
@@ -14,7 +13,6 @@ def speak_fast(message):
 
 def speak_slow(message):
     engine = pyttsx3.init()
-    # rate = engine.getProperty('rate')
     voices = engine.getProperty('voices')
     engine.setProperty('rate', 150)
     engine.setProperty('voice', voices[1].id)
