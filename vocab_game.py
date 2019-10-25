@@ -13,6 +13,7 @@ import speech_recognition as sr
 from speak import speak_fast, speak_slow, speak
 from transcribe_speech import listen
 import webbrowser
+from hint_function import gethint
 
 num_guesses = 3
 prompt_limit = 5
@@ -84,7 +85,12 @@ def spell(answer):
             break
         elif user_has_more_attempts:
             f.write(f"\nAttempt {i+1}:\t{spell_guess}")
-            speak_fast(f"Not quite, let's try again. Spell the word {answer}.")
+            hintword, voice = gethint(answer, spell_guess)
+            print(f"Not quite, here's what you got right so far\n\t\t{hintword}")
+            speak_fast(f"Not quite, here's what you got right so far")
+            time.sleep(0.5)
+            speak_slow(voice)
+            speak_fast(f"Let's try again. Spell the word {answer}.")
         else:
             f.write(f"\nAttempt {i+1}:\t{spell_guess}")
             f.write(f"\nComputer gave correct spelling after3 missed attempts.\n")
