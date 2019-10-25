@@ -1,4 +1,5 @@
 *.txt
+*.json
 credentials.py
 
 # Byte-compiled / optimized / DLL files
